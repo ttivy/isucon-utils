@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 set -ex
 
-# See: https://github.com/tkuchiki/alp/releases/tag/v1.0.0
+# See: https://github.com/tkuchiki/alp
 VER='v1.0.0'
-URL="https://github.com/tkuchiki/alp/releases/download/$VER/alp_linux_amd64.zip"
+URL="https://github.com/tkuchiki/alp/releases/download/${VER}/alp_linux_amd64.zip"
 
-if !(type "unzip" > /dev/null 2>&1); then
-    sudo apt install unzip
-fi
+test $(which unzip) || sudo apt install -y unzip
 
 cd /tmp
-curl -L -o ./alp.zip $URL
+wget "${URL}"
 unzip -o alp.zip -d .
 sudo install ./alp /usr/local/bin

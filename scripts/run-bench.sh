@@ -2,12 +2,10 @@
 set -ex
 
 DATE=`date "+%Y%m%d-%H%M%S"`
-HOST='192.168.33.11'
-OUTPUT="./outputs/output-$DATE.json"
-BENCH_DIR="$HOME/isucon6q"
+HOST=
+OUTPUT="${DATE}.log"
 
-cd "$BENCH_DIR"
-mkdir -p $(dirname "$OUTPUT")
+# test $(which jq) || sudo apt install -y jq
 
-./isucon6q-bench -target "http://$HOST" > "$OUTPUT"
-jq . < $OUTPUT
+# ./bin/bench "http://${HOST}" > "${OUTPUT}"
+# jq . < "${OUTPUT}"
