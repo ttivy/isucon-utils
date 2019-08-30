@@ -1,2 +1,4 @@
-# isucon-utils
-Utilities for ISUCON
+# Usage
+```
+$ git clone https://github.com/ttivy/isucon-utils.git
+```
