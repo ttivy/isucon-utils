@@ -9,5 +9,5 @@ test $(which unzip) || sudo apt install -y unzip
 
 cd /tmp
 wget "${URL}"
-unzip -o alp.zip -d .
+unzip -o $(basename "${URL}") -d .
 sudo install ./alp /usr/local/bin
